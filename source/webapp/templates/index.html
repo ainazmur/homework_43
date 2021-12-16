@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <form action="" method="POST">
+    {% csrf_token %}
+    First number: <input type="number" name="first"/><br/>
+    Second number: <input type="number" name="second"/><br/>
+        <p><input name="cal" type="radio" value="add" checked>add</p>
+        <p><input name="cal" type="radio" value="subtract">subtract</p>
+        <p><input name="cal" type="radio" value="multiply">multiply</p>
+        <p><input name="cal" type="radio" value="divide">divide</p>
+    <br/>
+    <input type="submit" value="Calculate"/>
+    </form>
+    <p>{{ message }}{{ first }}{{ evaluate }}{{ second }}{{ equal }}{{ result }}</p>
+</body>
+</html>
